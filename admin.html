@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Fashion - Men</title>
+	<link rel="stylesheet" type="text/css" href="css.css">
+</head>
+<BODY id="body">
+	<div class="width-100">
+		<div class="width-33">
+		</div>
+		<div class="width-33">
+			<h1>Fashion Store</h1>
+		</div>
+		<div class="width-33">
+		</div>
+		<div class="width-100">
+			<ul>
+				<li class="list-item">
+					<a href="index.html">Home</a>
+				</li>
+				<li class="list-item">
+					<div class="dropdown">
+					  <span class="span-link">Women</span>
+					  <div class="dropdown-content">
+					    <p><a href="women-T.html">Trousers</a></p>
+					    <p><a href="women-Tshirt.html">T-shirts</a></p>
+					  </div>
+					</div>
+				</li>
+				<li class="list-item">
+					<div class="dropdown">
+					  <span class="span-link">Men</span>
+					  <div class="dropdown-content">
+					    <p><a href="men-T.html">Trousers</a></p>
+					    <p><a href="men-Tshirt.html">T-shirts</a></p>
+					  </div>
+					</div>
+				</li>
+				<li class="list-item-r"id="target2">
+					<a href="register.html" >Register</a>
+				</li>
+				<li class="list-item-r" id="target1">
+					<a href="login.html">Login</a>
+				</li>
+				<li class="list-item-r admin-name"id="target0">
+				</li>
+			</ul>
+		</div>
+	</div>
+	<HR>
+	<div class="width-100">
+		<h2>Admin Control</h2>
+		<HR>
+		<form class="width-100" action="" onsubmit="Colorselect();">
+		  <label for="favcolor">Select your favorite color:</label>
+		  <input type="color" id="favcolor" name="favcolor" value="#2b4e58"><br><br>
+		  <input type="submit">
+		</form>
+		<form class="width-100" action="" onsubmit="Sizeselect();">
+		  <label for="sizewomen">Select your women sizes:</label>
+		  <input type="text" id="sizewomen" name="sizewomen" value="S / M / L / XL"><br><br>
+		  <input type="submit">
+		</form>
+	</Hr>
+	</div>
+	<footer id="globalFooter" class="global" style="bottom:0px;">		
+		<div class="inner">
+			
+			<div class="row spaced">
+				<div class="col contact-details">
+					<p>Fashion Store in Egypt<br>
+					<a class="no-style" href="mailto:hello@fashion.com">hello@fashion.com</a> <span class="vline-div dsk">•</span> 856.816.6159 <span class="vline-div">•</span> 610.952.1398<br>
+					New Cairo, CA</p>
+				</div>
+				
+				<div class="col social-links">
+					<ul>
+						<li><a href="https://www.facebook.com" target="_blank" class="uline no-style">Facebook</a></li>
+						<li>+</li>
+						<li><a href="https://www.twitter.com/" target="_blank" class="uline no-style">Twitter</a></li>
+					</ul>
+				</div>
+			</div>
+			
+			<div class="legal"><p>Copyright 2020 All Rights Reserved</p></div>
+			
+		</div>	
+	</footer>
+     <script>
+         function checkpa(){
+             var check=document.getElementById("pass");
+             var check2=document.getElementById("pass2");
+             if(check.type=="password"){
+                 check.type="text";
+                 check2.type="text";
+             }
+             else{
+                 check.type="password";
+                 check2.type="password";
+             }
+         }
+         window.localStorage;
+        function checkCookie() {
+          var user = localStorage.getItem("email");
+          if (user != "" && user != null) {
+            //alert("Welcome " + user);
+        	var target0 = document.getElementById("target0");
+        	target0.innerHTML = '<p>Hello '+user+'</p>';
+        	var target = document.getElementById("target1");
+        	target.innerHTML = '<a href="admin.html" class="active">Admin</a>';
+        	var target2 = document.getElementById("target2");
+        	target2.innerHTML = '<a href="#" onClick="logout();">Logout</a>';
+          }
+        }
+        function checkColor() {
+          var color = localStorage.getItem("color");
+          if (color != "" && color != null) {
+          	var body = document.getElementById("body");
+          	body.setAttribute("BGCOLOR", color);
+          }else{
+          	var body = document.getElementById("body");
+            body.setAttribute("BGCOLOR", "#2b4e58");
+          }
+        }
+        function myFunction() {
+             var email=document.getElementById("email");
+             var check=document.getElementById("pass");
+             var check2=document.getElementById("pass2");
+          if(check.value != check2.value ) alert("Password didn't match");
+          else{
+              localStorage.setItem("email", email.value);
+              localStorage.setItem("password", check.value);
+          }
+        }
+        function logout() {
+              localStorage.clear();
+              location.reload();
+        }
+        function Colorselect(){
+        	var color = document.getElementById("favcolor");
+            localStorage.setItem("color", color.value);
+        }
+        function Sizeselect(){
+        	var sizewomen = document.getElementById("sizewomen");
+            localStorage.setItem("sizewomen", sizewomen.value);
+        }
+        checkCookie();
+        checkColor();
+     </script>
+</BODY>
+</HTML>

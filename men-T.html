@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Fashion - Men</title>
+	<link rel="stylesheet" type="text/css" href="css.css">
+</head>
+<BODY id="body">
+	<div class="width-100">
+		<div class="width-33">
+		</div>
+		<div class="width-33">
+			<h1>Fashion Store</h1>
+		</div>
+		<div class="width-33">
+		</div>
+		<div class="width-100">
+			<ul>
+				<li class="list-item">
+					<a href="index.html">Home</a>
+				</li>
+				<li class="list-item">
+					<div class="dropdown">
+					  <span class="span-link">Women</span>
+					  <div class="dropdown-content">
+					    <p><a href="women-T.html">Trousers</a></p>
+					    <p><a href="women-Tshirt.html">T-shirts</a></p>
+					  </div>
+					</div>
+				</li>
+				<li class="list-item">
+					<div class="dropdown">
+					  <span class="span-link active">Men</span>
+					  <div class="dropdown-content">
+					    <p><a href="men-T.html" class="active">Trousers</a></p>
+					    <p><a href="men-Tshirt.html">T-shirts</a></p>
+					  </div>
+					</div>
+				</li>
+				<li class="list-item-r"id="target2">
+					<a href="register.html" >Register</a>
+				</li>
+				<li class="list-item-r" id="target1">
+					<a href="login.html">Login</a>
+				</li>
+				<li class="list-item-r admin-name"id="target0">
+				</li>
+			</ul>
+		</div>
+	</div>
+	<HR>
+	<div class="width-100">
+		<h2>MEN</h2>
+		<HR>
+	    <div class="width-33">
+	        <img src="Brown Classic Pants.jpeg"  width="200"/>
+	        <br />
+	        <p> Classic Brown Trousers  <br /> S / M / L / XL <br /> 190 LE </p>
+	    </div>
+
+	    <div class="width-33">
+	        <img src="Golf White Grey Pants.jpeg"  width="200"/>
+	        <br />
+	        <p> Golf White Grey Pants  <br /> S / M / L / XL <br /> 180  LE</p>
+	    </div>
+
+	    <div class="width-33">
+	        <img src="Dark Blue Jeans.jpeg"  width="200"/>
+	        <br />
+	        <p> Slim Dark Blue Jeans  <br /> S / M / L / XL <br /> 250  LE </p>
+	    </div>
+
+	    <div class="width-33">
+	        <img src="Nike Pants.jpeg"  width="200"/>
+	        <br />
+	        <p> Nike Training Pants  <br /> S / M / L / XL <br /> 350 LE </p>
+	    </div>
+
+	    <div class="width-33">
+	        <img src="Adidas Pants.jpeg"  width="200"/>
+	        <br />
+	        <p> Adidas Training Pants  <br /> S / M / L / XL <br /> 330 LE </p>
+	    </div>
+
+	    <div class="width-33">
+	        <img src="Oversize Pants.jpeg"  width="200"/>
+	        <br />
+	        <p> Oversize Pants  <br /> S / M / L / XL <br /> 200 LE </p>
+	    </div>
+
+	    <div class="width-33">
+	        <img src="Skinny Jeans.jpeg"  width="200"/>
+	        <br />
+	        <p> Skinny Light Blue Jeans  <br /> S / M / L / XL <br /> 280 LE </p>
+	    </div>
+
+	    <div class="width-33">
+	        <img src="Short Jeans.jpeg"  width="200"/>
+	        <br />
+	        <p> Short Blue Jeans  <br /> S / M / L / XL <br /> 230 LE </p>
+	    </div>
+
+	    <div class="width-33">
+	        <img src="Black Skinny Jeans.jpeg"  width="200"/>
+	        <br />
+	        <p> Skinny Black Jeans  <br /> S / M / L / XL <br /> 280 LE </p>
+	    </div>
+
+	    <div class="width-33">
+	        <img src="Multipocket Pants.jpeg"  width="200"/>
+	        <br />
+	        <p> Multipocket Casual Comfort Pants <br /> S / M / L / XL<br /> 340 LE </p>
+	    </div>
+
+	    <div class="width-33">
+	        <img src="Army Pants.jpeg" width="200" />
+	        <br />
+	        <p> Military Camo Pants  <br /> S / M / L / XL<br /> 340 LE </p>
+	    </div>
+
+	    <div class="width-33">
+	        <img src="Nike joggers.jpeg"  width="200"/>
+	        <br />
+	        <p> Nike Grey Joggers <br /> S / M / L / XL <br /> 250 LE </p>
+	    </div>
+	</Hr>
+	</div>
+	<footer id="globalFooter" class="global">		
+		<div class="inner">
+			
+			<div class="row spaced">
+				<div class="col contact-details">
+					<p>Fashion Store in Egypt<br>
+					<a class="no-style" href="mailto:hello@fashion.com">hello@fashion.com</a> <span class="vline-div dsk">•</span> 856.816.6159 <span class="vline-div">•</span> 610.952.1398<br>
+					New Cairo, CA</p>
+				</div>
+				
+				<div class="col social-links">
+					<ul>
+						<li><a href="https://www.facebook.com" target="_blank" class="uline no-style">Facebook</a></li>
+						<li>+</li>
+						<li><a href="https://www.twitter.com/" target="_blank" class="uline no-style">Twitter</a></li>
+					</ul>
+				</div>
+			</div>
+			
+			<div class="legal"><p>Copyright 2020 All Rights Reserved</p></div>
+			
+		</div>	
+	</footer>
+     <script>
+         function checkpa(){
+             var check=document.getElementById("pass");
+             if(check.type=="password"){
+                 check.type="text";
+             }
+             else{
+                 check.type="password";
+             }
+         }
+         window.localStorage;
+        function checkCookie() {
+          var user = localStorage.getItem("email");
+          if (user != "" && user != null) {
+        	var target0 = document.getElementById("target0");
+        	target0.innerHTML = '<p>Hello '+user+'</p>';
+            var target = document.getElementById("target1");
+            target.innerHTML = '<a href="admin.html">Admin</a>';
+            var target2 = document.getElementById("target2");
+            target2.innerHTML = '<a href="#" onClick="logout();">Logout</a>';
+          } else {
+          }
+        }
+        function checkColor() {
+          var color = localStorage.getItem("color");
+          if (color != "" && color != null) {
+            var body = document.getElementById("body");
+            body.setAttribute("BGCOLOR", color);
+          }else{
+            var body = document.getElementById("body");
+            body.setAttribute("BGCOLOR", "#2b4e58");
+          }
+        }
+        function logout() {
+              localStorage.clear();
+              location.reload();
+        }
+        function myFunction() {
+             var email=document.getElementById("email");
+             var check=document.getElementById("pass");
+              localStorage.setItem("email", email.value);
+              localStorage.setItem("password", check.value);
+        }
+        checkCookie();
+        checkColor();
+     </script>
+</BODY>
+</HTML>

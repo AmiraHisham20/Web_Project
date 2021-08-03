@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Fashion - Women</title>
+	<link rel="stylesheet" type="text/css" href="css.css">
+</head>
+<BODY id="body" >
+	<div class="width-100">
+		<div class="width-33">
+		</div>
+		<div class="width-33">
+			<h1>Fashion Store</h1>
+		</div>
+		<div class="width-33">
+		</div>
+		<div class="width-100">
+			<ul>
+				<li class="list-item">
+					<a href="index.html">Home</a>
+				</li>
+				<li class="list-item">
+					<div class="dropdown">
+					  <span class="span-link active">Women</span>
+					  <div class="dropdown-content">
+					    <p><a href="women-T.html" class="active">Trousers</a></p>
+					    <p><a href="women-Tshirt.html">T-shirts</a></p>
+					  </div>
+					</div>
+				</li>
+				<li class="list-item">
+					<div class="dropdown">
+					  <span class="span-link">Men</span>
+					  <div class="dropdown-content">
+					    <p><a href="men-T.html">Trousers</a></p>
+					    <p><a href="men-Tshirt.html">T-shirts</a></p>
+					  </div>
+					</div>
+				</li>
+				<li class="list-item-r"id="target2">
+					<a href="register.html" >Register</a>
+				</li>
+				<li class="list-item-r" id="target1">
+					<a href="login.html">Login</a>
+				</li>
+				<li class="list-item-r admin-name"id="target0">
+				</li>
+			</ul>
+		</div>
+	</div>
+	<HR>
+	<div class="width-100">
+		<h2>WOMEN</h2>
+		<HR>
+		<div class="width-33">
+			<img src="pants3.jpeg" width="200"/>
+			<br />
+			<p > Vitage Slim High Ankle Jeans <br /> 749.00 LE <br /> <span class="sizewomenspan"> S / M / L / XL </span></p>
+		</div>
+
+		<div class="width-33">
+			<img src="pants1.jpeg" width="200"/>
+			<br />
+			<p> Skinny High Jeans <br /> 649.00 LE <br /> <span class="sizewomenspan"> S / M / L / XL </span></p>
+		</div>
+
+		<div class="width-33">
+			<img src="pants2.jpeg" width="200"/>
+			<br />
+			<p> Smocked jumpsuit <br />  999.000 LE <br /> <span class="sizewomenspan"> S / M / L / XL </span></p>
+		</div>
+		<div class="width-33">
+			<img src="pants5.jpeg" width="200" />
+			<br />
+			<p > Wide trousers <br />  349.00 LE <br /> <span class="sizewomenspan"> S / M / L / XL </span></p>
+		</div>
+
+		<div class="width-33">
+			<img src="pants4.jpeg" width="200"/>
+			<br />
+			<p> Wide Paper Bag jeans <br />  499.00 LE <br /> <span class="sizewomenspan"> S / M / L / XL </span></p>
+		</div>
+
+		<div class="width-33">
+			<img src="pants6.jpeg" width="200"/>
+			<br />
+			<p> Wide trousers <br />  349.000 LE <br /> <span class="sizewomenspan"> S / M / L / XL </span> </p>
+		</div>
+	</Hr>
+	</div>
+	<footer id="globalFooter" class="global">		
+		<div class="inner">
+			
+			<div class="row spaced">
+				<div class="col contact-details">
+					<p>Fashion Store in Egypt<br>
+					<a class="no-style" href="mailto:hello@fashion.com">hello@fashion.com</a> <span class="vline-div dsk">•</span> 777.221.231 <span class="vline-div">•</span> 423.272.8272<br>
+					New Cairo, CA</p>
+				</div>
+				
+				<div class="col social-links">
+					<ul>
+						<li><a href="https://www.facebook.com" target="_blank" class="uline no-style">Facebook</a></li>
+						<li>+</li>
+						<li><a href="https://www.twitter.com/" target="_blank" class="uline no-style">Twitter</a></li>
+					</ul>
+				</div>
+			</div>
+			
+			<div class="legal"><p>Copyright 2020 All Rights Reserved</p></div>
+			
+		</div>	
+	</footer>
+     <script>
+         function checkpa(){
+             var check=document.getElementById("pass");
+             if(check.type=="password"){
+                 check.type="text";
+             }
+             else{
+                 check.type="password";
+             }
+         }
+         window.localStorage;
+        function checkCookie() {
+          var user = localStorage.getItem("email");
+          if (user != "" && user != null) {
+        	var target0 = document.getElementById("target0");
+        	target0.innerHTML = '<p>Hello '+user+'</p>';
+            var target = document.getElementById("target1");
+            target.innerHTML = '<a href="admin.html">Admin</a>';
+            var target2 = document.getElementById("target2");
+            target2.innerHTML = '<a href="#" onClick="logout();">Logout</a>';
+          } else {
+          }
+        }
+        function checkColor() {
+          var color = localStorage.getItem("color");
+          if (color != "" && color != null) {
+            var body = document.getElementById("body");
+            body.setAttribute("BGCOLOR", color);
+          }else{
+            var body = document.getElementById("body");
+            body.setAttribute("BGCOLOR", "#2b4e58");
+          }
+        }
+        function checkSize() {
+          var size = localStorage.getItem("sizewomen");
+          if (size != "" && size != null) {
+            var sizes = document.getElementsByClassName("sizewomenspan");
+			Array.prototype.forEach.call(sizes, function(sizaya) {
+            	sizaya.innerHTML = size;
+			});
+          }else{
+            var sizes = document.getElementsByClassName("sizewomenspan");
+			Array.prototype.forEach.call(sizes, function(sizaya) {
+            	sizaya.innerHTML = "S / M / L / XL / XXL";
+			});
+          }
+        }
+        function logout() {
+              localStorage.clear();
+              location.reload();
+        }
+        function myFunction() {
+             var email=document.getElementById("email");
+             var check=document.getElementById("pass");
+              localStorage.setItem("email", email.value);
+              localStorage.setItem("password", check.value);
+        }
+        checkCookie();
+        checkColor();
+        checkSize();
+     </script>
+</BODY>
+</HTML>

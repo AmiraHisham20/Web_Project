@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fashion - Login</title>
+    <link rel="stylesheet" type="text/css" href="css.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<BODY id="body">
+    <div class="width-100">
+        <div class="width-33">
+        </div>
+        <div class="width-33">
+            <h1>Fashion Store</h1>
+        </div>
+        <div class="width-33">
+        </div>
+        <div class="width-100">
+            <ul>
+                <li class="list-item">
+                    <a href="index.html">Home</a>
+                </li>
+                <li class="list-item">
+                    <div class="dropdown">
+                      <span class="span-link">Women</span>
+                      <div class="dropdown-content">
+                        <p><a href="women-T.html">Trousers</a></p>
+                        <p><a href="women-Tshirt.html">T-shirts</a></p>
+                      </div>
+                    </div>
+                </li>
+                <li class="list-item">
+                    <div class="dropdown">
+                      <span class="span-link">Men</span>
+                      <div class="dropdown-content">
+                        <p><a href="men-T.html">Trousers</a></p>
+                        <p><a href="men-Tshirt.html">T-shirts</a></p>
+                      </div>
+                    </div>
+                </li>
+                <li class="list-item-r" id="target2">
+                    <a href="register.html" id="target1">Register</a>
+                </li>
+                <li class="list-item-r">
+                    <a href="login.html"  class="active">Login</a>
+                </li>
+                <li class="list-item-r admin-name"id="target0">
+                </li>
+            </ul>
+        </div>
+    </div>
+    <HR>
+    <div class="width-100">
+        <h2>Sign in</h2>
+        <HR>
+         <form action=""  onsubmit="myFunction()" style="margin: auto; max-width:500px;"> 
+             <div class="input">
+                 <i class="fa fa-envelope icon"></i>
+                 <input class="field" type="email" id="email" placeholder="Email" name="email" required  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,6}$" >
+             </div>
+             <div class="input">
+                 <i class="fa fa-user icon"></i>
+                 <input class="field" id="pass" type="password" placeholder="password" name="password">           
+                 <input type="checkbox" id="checkpass" value="pass" onclick="checkpa()">
+                 <label for="checkpass">Show password</label>
+             </div>
+             <button type="submit" class="button">Sign in</button>
+         </form>
+    </Hr>
+    </div>
+    <footer id="globalFooter" class="global">       
+        <div class="inner">
+            
+            <div class="row spaced">
+                <div class="col contact-details">
+                    <p>Fashion Store in Egypt<br>
+                    <a class="no-style" href="mailto:hello@fashion.com">hello@fashion.com</a> <span class="vline-div dsk">•</span> 777.221.231 <span class="vline-div">•</span> 423.272.8272<br>
+                    New Cairo, CA</p>
+                </div>
+                
+                <div class="col social-links">
+                    <ul>
+                        <li><a href="https://www.facebook.com" target="_blank" class="uline no-style">Facebook</a></li>
+                        <li>+</li>
+                        <li><a href="https://www.twitter.com/" target="_blank" class="uline no-style">Twitter</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="legal"><p>Copyright 2020 All Rights Reserved</p></div>
+            
+        </div>  
+    </footer>
+     <script>
+         function checkpa(){
+             var check=document.getElementById("pass");
+             if(check.type=="password"){
+                 check.type="text";
+             }
+             else{
+                 check.type="password";
+             }
+         }
+         window.localStorage;
+        function checkCookie() {
+          var user = localStorage.getItem("email");
+          if (user != "" && user != null) {
+            var target0 = document.getElementById("target0");
+            target0.innerHTML = '<p>Hello '+user+'</p>';
+            var target = document.getElementById("target1");
+            target.innerHTML = '<a href="admin.html">Admin</a>';
+            var target2 = document.getElementById("target2");
+            target2.innerHTML = '<a href="#" onClick="logout();">Logout</a>';
+            window.location.replace("index.html");
+          } else {
+          }
+        }
+        function checkColor() {
+          var color = localStorage.getItem("color");
+          if (color != "" && color != null) {
+            var body = document.getElementById("body");
+            body.setAttribute("BGCOLOR", color);
+          }else{
+            var body = document.getElementById("body");
+            body.setAttribute("BGCOLOR", "#2b4e58");
+          }
+        }
+        function logout() {
+              localStorage.clear();
+              location.reload();
+        }
+        function myFunction() {
+             var email=document.getElementById("email");
+             var check=document.getElementById("pass");
+              localStorage.setItem("email", email.value);
+              localStorage.setItem("password", check.value);
+        }
+        checkCookie();
+        checkColor();
+     </script>
+</BODY>
+</HTML>
